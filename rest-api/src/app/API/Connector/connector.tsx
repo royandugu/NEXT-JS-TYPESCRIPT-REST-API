@@ -1,3 +1,5 @@
+const mongoose=require("mongoose");
+
 const Connector=async (url:string) : Promise<void>=>{
     try{
         await mongoose.connect(url);
