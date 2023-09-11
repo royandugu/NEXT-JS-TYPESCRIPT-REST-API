@@ -1,4 +1,4 @@
-const mongoose=require("mongoose");
+import mongoose from "mongoose";
 
 const todoSchema=new mongoose.Schema({
     title:{
@@ -9,7 +9,6 @@ const todoSchema=new mongoose.Schema({
         type:String,
         required:[true,"Todo field is required"]
     }
-})
+},{timestamps:true})
 
-mongoose.models={}
 export default mongoose.model("todo-model",todoSchema);

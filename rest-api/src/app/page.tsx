@@ -2,13 +2,14 @@
 
 import React, { FormEventHandler } from "react"
 
-import API from "./API/api"
+
+require("dotenv");
 
 const HomePage:React.FC=()=>{
-  
-  const submitForm:FormEventHandler=(e:React.FormEvent)=>{
-    e.preventDefault();
-    console.log("I am form submitting");
+
+  const submitForm:FormEventHandler=async (e:React.FormEvent)=>{
+    //connect to the database
+    
   }
 
   return(
@@ -20,12 +21,5 @@ const HomePage:React.FC=()=>{
   )
 }
 
-
-export async function getServerSideProps(){
-  const {success}=await API();
-  return {
-    props: { success },
-  };
-}
 
 export default HomePage;
