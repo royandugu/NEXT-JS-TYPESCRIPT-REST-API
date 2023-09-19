@@ -2,7 +2,6 @@ import Model from "../../../../../API/Models/model";
 import Connector from "../../../../../API/Connector/connector";
 import { NextResponse } from "next/server";
 
-
 interface ParamsType{
     id:string
 }
@@ -21,3 +20,10 @@ export const GET=async (request:any,{params}:{params:ParamsType}):Promise<any>=>
     const indvData=await Model.findOne({_id:id});
     return NextResponse.json({message:"Data fetching", indvData},{status:200});
 }
+
+export const DELETE=async (request:any, {params}:{params:ParamsType}):Promise<any>=>{
+    await Connector();
+    const {id}=params;
+    const deletedData=await Model.findOneAndDelete({_id:id});
+    return NextResponse.json({message:"Data deleted",deletedData},{status:200});
+} 

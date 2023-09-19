@@ -8,7 +8,7 @@ const todoSchema=new mongoose.Schema({
     todo:{
         type:String,
         required:[true,"Todo field is required"]
-    }
+    } 
 },{timestamps:true})
 
 export default mongoose.model("todo-model",todoSchema);
